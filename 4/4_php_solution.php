@@ -22,7 +22,7 @@ function urlCheck(string $foo)
         $fooArr = explode('.', $fooUrl);
 
         foreach($fooArr as $item) {
-            if (strlen($item) < 2) {
+            if (empty($item)) {
                 return false;
             }
         }
