@@ -16,7 +16,7 @@ function timeCheck(string $foo)
         $result = false;
         $foo = explode('/', $foo);
 
-        if (checkdate($foo[1], $foo[0], $foo[2])
+        if (checkdate((int) $foo[1], (int) $foo[0], (int) $foo[2])
             && $foo[2] >= 1600 && $foo[2] <= 9999
             && strlen($foo[0]) === 2
             && strlen($foo[1]) === 2) {
