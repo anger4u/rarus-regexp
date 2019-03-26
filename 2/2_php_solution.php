@@ -24,31 +24,31 @@ function guidCheck(string $foo)
         throw new InvalidArgumentException('GUID введёт неверно!');
     }
 
-    $foo = explode('-', $foo);
+    $fooArr = explode('-', $foo);
 
     /**
      * Проверяем на количество разбитых частей
      */
-    if (count($foo) === 5) {
+    if (count($fooArr) === 5) {
         $fooCount = [8, 4, 4, 4, 12];
 
         /**
          * Проверяем каждую часть на количество сивмолов согласно массиву $fooCount
          */
-        foreach ($foo as $key => $value) {
+        foreach ($fooArr as $key => $value) {
             if (strlen($value) === $fooCount[$key]) {
                 /**
                  * Проверка на соответствие типа числа
                  */
                 if(!ctype_xdigit($value)) {
-                    throw new InvalidArgumentException('GUID введёт неверно!');
+                    throw new InvalidArgumentException("число с ключом $key не шестнадцатеричное");
                 }
             } else {
-                throw new InvalidArgumentException('GUID введёт неверно!');
+                throw new InvalidArgumentException("длинна числа с ключом $key не равна $fooCount[$key]");
             }
         }
     } else {
-        throw new InvalidArgumentException('GUID введёт неверно!');
+        throw new InvalidArgumentException('неверное количество чисел в GUID!');
     }
 
     return ($result);
