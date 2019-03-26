@@ -2,6 +2,13 @@
 
 declare(strict_types=1);
 
+/**
+ * Определение является ли данная строка валидным E-mail адресом согласно RFC под номером 2822
+ *
+ * @param string $foo
+ *
+ * @return bool
+ */
 function emailCheck(string $foo) {
 
     if(!empty($foo)) {

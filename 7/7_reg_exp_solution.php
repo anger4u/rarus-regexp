@@ -2,6 +2,14 @@
 
 declare(strict_types=1);
 
+/**
+ * Определение является ли данная строка валидным E-mail адресом согласно RFC под номером 2822
+ * через регулярное выражение
+ *
+ * @param string $foo
+ *
+ * @return bool
+ */
 function emailCheck(string $foo) {
 
     if (!empty($foo)) {
@@ -26,13 +34,3 @@ var_dump(emailCheck('val@val.a.a.a.a'));
 var_dump(emailCheck('12323123@111[]][] '));
 var_dump(emailCheck(''));
 echo "</pre>";
-//
-//$email = ''; //входящая строка, в которой может быть все, что угодно, а должна быть почта
-//if (preg_match("/^(?:[a-z0-9]+(?:[-_.]?[a-z0-9]+)?@[a-z0-9_.-]+(?:\.?[a-z0-9]+)?\.[a-z]{2,5})$/i", $email))
-//{
-//    //все ОК, email правильный
-//}
-//else
-//{
-//    //проверка email на правильность НЕ пройдена
-//}
